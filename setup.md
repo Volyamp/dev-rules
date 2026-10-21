@@ -1,14 +1,12 @@
 # 準備と設定（setup.md）
 
-版：v6（2026-10-18）
-
 人間が行う作業です。文章のルールだけでは守れないものを、設定で守るためのチェックリストも含みます。
 GitHub や Claude の画面の名前は、変わることがあります。画面の表示に合わせて読み替えてください。
 「（未確認）」は、実際に動くかどうかを、まだ確かめていないという意味です。
 
 ## 1. 新しいプロダクトを始める前に（プロダクトごとに1回）
-1. 雛形のリポジトリ（product-template）で「Use this template」を押し、新しいリポジトリを作る。公開範囲は private にする。「Use this template」は、雛形が Template repository に設定されていないと出ない（要確認）。
-2. Claude の GitHub 連携の設定で、新しいリポジトリを対象に追加する。dev-rules も、読める状態にしておく。
+1. 雛形のリポジトリ（product-template）で「Use this template」を押し、新しいリポジトリを作る。公開範囲は private にする。「Use this template」は、雛形が Template repository に設定されていないと出ない（要確認）。作ったら、CLAUDE.md の「準拠する dev-rules の版」が dev-rules の VERSION と同じかを確かめる。違えば、雛形の CLAUDE.md に差し替えてから進む。
+2. Claude の GitHub 連携の設定で、新しいリポジトリを対象に追加する。dev-rules も、読める状態にしておく（CLAUDE.md の「作業前の確認」が VERSION を読むため）。
 3. 下の「2. GitHub の設定」を行う。
 4. prompts.md の P1 を貼る。（CLAUDE.md の製品名は、P1 で AI が書く。）
 

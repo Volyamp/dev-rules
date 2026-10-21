@@ -1,7 +1,5 @@
 # 依頼文集（prompts.md）
 
-版：v7（2026-10-21）
-
 ここが正本です。手元のコピーは古くなるので使わず、毎回ここからコピーしてください。
 
 ## 使い方
@@ -36,9 +34,9 @@
 
 ## P0. 迷ったとき（次の作業を選ぶ）
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
-docs/ARCHITECTURE.md の「4.3 未解決の課題」の最優先項目を先に確認し、次にやるべき作業を数個提案してください
+docs/ARCHITECTURE.md の「4. 進捗・引き継ぎメモ」の「未解決の問題」の最優先項目を先に確認し、次にやるべき作業を数個提案してください
 - 進捗メモ（4.）に書かれた PR や枝の状態は、GitHub（REST API など）で確かめてから使ってください。
 - 選んだ作業が「静的レビュー」「テスト作成」「動的テスト」のときは、task-guide「別の新しいチャットで行う作業」の確認を取ってから進めてください。確認を取れないときは、実行せず、使う依頼文の番号と、チャットの条件（新しいチャットか、GitHub をつなぐか）を教えて、止まってください。
 - それ以外の作業は、common-rules §9 の「止まるところ」まで進めてください。
@@ -50,7 +48,7 @@ docs/ARCHITECTURE.md の「4.3 未解決の課題」の最優先項目を先に�
 ## P1. 新しいプロダクトを始める
 先に、setup.md の準備をすませておく。
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 製品名：《製品名》
 作りたいもの（箇条書きで可。分かる範囲で）：
@@ -69,7 +67,7 @@ task-guide の「要件定義」に従って、雛形の docs/ARCHITECTURE.md �
 ## P2. 設計を OK にする
 P1 の枝（design/draft）は、そのまま残しておく。
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 docs/ARCHITECTURE.md を確認しました。
 OK の項目：《項目の番号。例：1-1、1-2、2。なければ「なし」》
@@ -87,7 +85,7 @@ task-guide の「設計の確定」に従って、更新してください。
 ## P3. 実装する
 先に、人間が P2 の設計を main に取り込んでおく（AI は行わない）。
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 task-guide の「実装」に従って、実装してください。
 - 作業は 《用途》/《内容》 で行い、コミットして push する（PR は原則作らない）。
@@ -103,7 +101,7 @@ task-guide の「実装」に従って、実装してください。
 ## P4. README を作る（v2：通常は P3 に含める。README だけを後から作るときに使う）
 先に、人間が P3 の実装を main に取り込んでおく（AI は行わない）。
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 task-guide の「README作成」に従って、README.md を作ってください。
 - docs/readme にコミットして push する（PR は原則作らない）。
@@ -159,14 +157,14 @@ tests/ に置くファイルごとに、パスを見出しにして、コード�
 ## P6. テストを取り込む
 新しいチャットで、GitHub をつなぐ。P5 で出たテストを貼る。
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 task-guide の「テストの取り込み」に従ってください。
 - 次のテストを、tests/ にそのまま置く。期待値は変えない。
 - .github/workflows/ci.yml の TEST_COMMAND とセットアップ手順を、docs/ARCHITECTURE.md の「2. 技術選定」に合わせて設定してよい。この依頼文が、ci.yml の変更の明確な指示です。ほかの .github/ のファイルは変更しない。
 - テストを実行できたら、結果をそのまま報告する。失敗しても、ここでは直さない。
 - 進捗メモの「テスト」を更新する。
-- test/tests にコミットして push する（PR は原則作らない）。動的テストの結果も、後から同じブランチに入れる。
+- test/《内容》（例：test/todo-list）にコミットして push する（PR は原則作らない）。動的テストの結果も、後から同じブランチに入れる。
 
 【取り込むテスト】
 《P5 の出力のうち、tests/ に置くファイルの部分を貼る》
@@ -180,7 +178,7 @@ task-guide の「テストの取り込み」に従ってください。
 
 最初の全体レビュー：
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 common-rules §7 と、task-guide の「静的レビュー（最初の全体レビュー）」に従って、このプロダクトをレビューしてください。
 結果は docs/reviews/YYYYMMDD-all-static.md として、対象の枝（《ブランチ名》）に入れてください。
@@ -189,7 +187,7 @@ common-rules §7 と、task-guide の「静的レビュー（最初の全体レ�
 
 変更分のレビュー：
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 common-rules §7 と、task-guide の「静的レビュー（変更分）」に従って、《ブランチ名》 をレビューしてください。
 結果は docs/reviews/YYYYMMDD-《対象》-static.md（common-rules §7 の名前の決め方）として、対象の枝（《ブランチ名》）に入れてください。
@@ -201,7 +199,7 @@ common-rules §7 と、task-guide の「静的レビュー（変更分）」に�
 ## P8. 動的テストをする（AI が実行）
 新しいチャットで、GitHub をつなぐ。
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 dynamic-test.md の A に従って、実行してください。
 対象：《全体 または ブランチ名》
@@ -219,7 +217,7 @@ AI が実行できなかったとき（P8 の結果が「実行できなかっ�
 
 1回目（手順をもらう）：
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 dynamic-test.md の B に従って、私の PC で実行する手順を教えてください。
 対象：《全体 または ブランチ名》
@@ -249,7 +247,7 @@ dynamic-test.md の C に従って、次の結果をまとめてください。
 ## P10. テストが失敗したとき
 新しいチャットで、GitHub をつなぐ。
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 task-guide の「テストが失敗したとき」に従ってください。
 - 先に、切り分け（① 実装のバグ ② 名前の不一致 ③ 期待値の誤り ④ 仕様の誤り・不足）を報告する。
@@ -269,7 +267,7 @@ task-guide の「テストが失敗したとき」に従ってください。
 ## P11. 変更を入れる（保守・新機能）
 新しいチャットで、GitHub をつなぐ。
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 今回の変更：《変更内容》
 
@@ -284,7 +282,7 @@ task-guide の「保守運用」と「新機能の追加」のどちらに当た
 ## P12. 大きな決定を残す
 新しいチャットで、GitHub をつなぐ。
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 adr-template.md の形で、次の決定を、docs/adr/ に ADR として「提案」の状態で下書きしてください。
 決定内容：《内容》
@@ -297,7 +295,7 @@ adr-template.md の形で、次の決定を、docs/adr/ に ADR として「提�
 ## P13. 文書を整理する（任意のとき）
 チャットの条件：どちらでもよい。GitHub をつなぐ。
 ```
-最初に、CLAUDE.md と、dev-rules（https://github.com/jumpbol/dev-rules）の common-rules.md・task-guide.md を読んでください。読めない場合は、作業を始めずに、そう教えてください。
+最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
 
 《プロダクト名》の文書を整理してください。task-guide の「文書の整理」に従ってください。
 - 対象は、今の枝（《ブランチ名》）にあるすべての文書です。
