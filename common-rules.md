@@ -5,7 +5,7 @@
 作業の前の確認は、CLAUDE.md の「作業前の確認」に従ってください。作業に応じて読むファイルは、claude-md-block.md の「読む先の表」にあります。
 （例外：テスト作成のチャットは、貼られた資料と依頼文だけで作業します。rules/test.md §6）
 
-置き場所：https://github.com/jumpbol/dev-rules
+置き場所：https://github.com/Volyamp/dev-rules
 読めないときは、作業を始めずに、人間にそう伝えてください。
 
 ## 0. 呼び方
