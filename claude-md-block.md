@@ -3,7 +3,7 @@
 各プロダクトの CLAUDE.md には、この文書の「作業前の確認」「読む先の表」「基本の決まり」を、そのまま写す（見出しの # の数だけ違ってよい）。版（VERSION）を上げるときは、この文書と product-template の CLAUDE.md を同じ変更でそろえる。
 
 ### 作業前の確認
-1. https://raw.githubusercontent.com/jumpbol/dev-rules/main/VERSION を読む（1行）。
+1. https://raw.githubusercontent.com/Volyamp/dev-rules/main/VERSION を読む（1行）。
 2. 版が「v8-test3」と一致すれば、dev-rules の本文は読まず、「基本の決まり」に従う。
 3. 版が違う、または読めないときは、作業を始めず人間に伝える（勝手に合わせない）。
 4. 作業の種類に応じて、下の「読む先の表」の文書を読む（詳しい決まりが必要なときだけ）。
