@@ -1,9 +1,9 @@
 # 実装（作業ルール・実装・README）
 
 ## 5. 作業ルール
-- すべての変更（設計書、ADR、README、レビュー、テスト、コード）は、main に直接書き込まない。用途を表す接頭辞（design/、impl/、docs/、test/、fix/、adr/）で始まるブランチで行い、コミットして push する（PR は原則作らない。common-rules §1-2）。
+- すべての変更（設計書、ADR、README、レビュー、テスト、コード）は、main に直接書き込まない。用途を表す接頭辞（design/、impl/、docs/、test/、fix/、adr/）で始まるブランチで行い、コミットして push する（PR は原則作らない。common-rules §3）。
 - コミットして push するところまでが AI の仕事。PR は、依頼者が依頼したときだけ AI が作る。マージは人間が行い、AI はマージしない。
-- 規則や手順を変えるときは、VERSION を上げ、README の変更履歴に1行書く。同じ内容を書いているすべての文書（common-rules、rules/、task-guide.md、prompts.md、setup.md、README.md、dynamic-test.md、VERSION、claude-md-block.md、product-template の CLAUDE.md）を検索し、食い違いを残さない。残す場合は、理由をコミットメッセージに書き、人間の確認を取る。
+- 規則や手順を変えるときは、VERSION を上げ、README の変更履歴に1行書く。同じ内容を書いているすべての文書（common-rules、rules/、prompts.md、setup.md、README.md、dynamic-test.md、VERSION、claude-md-block.md、product-template の CLAUDE.md）を検索し、食い違いを残さない。残す場合は、理由をコミットメッセージに書き、人間の確認を取る。
 - 依頼された範囲を狭めるとき（一部だけで作業を終えるとき）は、先に人間に確認する。AI の判断で範囲を分けない。
 - 人間が実行したり使ったりするファイル（スクリプト、設定、手順書など）は、作成した時点で、添付（SendUserFile 等）か、人間が取り込める枝（リポジトリ）で届ける。作業用フォルダ（scratchpad や一時フォルダ）のパスだけを伝えない。人間の環境からは開けないため。
 - 次の新しいチャットには、main ではなく、対象の枝の名前を渡す。GitHub をつながないチャット（テスト作成）は、貼る資料で渡す。
@@ -24,9 +24,9 @@
 - マージ後に、ドキュメントだけを変えるための push はしない。次の PR を作る整理の時点で、前回分の状態を更新し、完了した項目は履歴に任せる。
 
 ## 実装
-- 始める条件は common-rules §1。足りなければ止まる。
-- 作業は impl/《内容》で行い、コミットして push する（PR は原則作らない。依頼者が依頼したときだけ作る）。枝の決まりは common-rules §1-2。
-- 進捗メモを同じ枝・同じ区切りで更新する。区切りごとのコミットに含めて push する（common-rules §1-2、v7）。
+- 始める条件は common-rules §2。足りなければ止まる。
+- 作業は impl/《内容》で行い、コミットして push する（PR は原則作らない。依頼者が依頼したときだけ作る）。枝の決まりは common-rules §3。
+- 進捗メモを同じ枝・同じ区切りで更新する。区切りごとのコミットに含めて push する（common-rules §3、v7）。
 - 「（確定）」に反する実装が必要になったら、止まって確認する。
 - 確定していない細部や、書かれていない細部は、進捗メモの「実装とのずれ」に書く。
 - README も同じ枝で作る（「README作成」の節）。
