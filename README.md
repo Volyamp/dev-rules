@@ -21,6 +21,7 @@ AI と一緒にプロダクトを作るときの、共通のルールと手順�
 | 作業前の確認、読む先の表、基本の決まりの要点（CLAUDE.md に写す） | claude-md-block.md |
 | 枝の名前、別チャットの条件、止まるところ、安全 | common-rules.md |
 | 要件定義・設計の確定・ADR | rules/design.md |
+| 細部（SPEC）の書き方 | rules/design.md §5、spec-template.md |
 | 実装・README | rules/impl.md |
 | テスト作成・取り込み・失敗時の切り分け | rules/test.md |
 | 静的レビュー | rules/review.md |
@@ -41,6 +42,7 @@ AI と一緒にプロダクトを作るときの、共通のルールと手順�
 - 依頼文（prompts.md）は、どのプロダクトでも「CLAUDE.md の作業前の確認に従う」の一文で始める。
 
 ## 変更履歴
+- v11（2026-10-27）：#27・#28 に対応。仕様を、要件（依頼者の指示）、骨格（承認制）、大きな決定（ADR）、細部（docs/SPEC.md、案）に分けた。ARCHITECTURE は 1（要件）・3（骨格）・4（進捗）だけにし、細部は SPEC.md に移す。骨格を変えるときは承認を取り、ADR に残す。テストの根拠に SPEC.md を加え、SPEC を変えたらテストも同じコミットで直す。README の「ARCHITECTUREとの差分」は「要件・骨格との差分」に改めた。spec-template.md を追加。
 - v10（2026-10-24）：静的レビュー（全体）の指摘を反映（docs/reviews/20261024-all-static.md）。破壊的操作の一覧を common-rules §8 に一本化し、§1 と claude-md-block はそこを指す（指示があれば、確認して実行できる）。秘密情報がすでに push された場合の手順を追加。P0 の参照先（未解決の問題、次にやること）、P4 の枝（impl/）、P6 の ci.yml の許可範囲を直した。レビューの形式に対象の SHA と対応状況を追加。同じ日・同じ対象の報告書は上書きしない。「テストあり」の定義は claude-md-block に一本化。個人情報の範囲を個人名・ユーザー名まで含めて揃えた。v6 の表の場所は rules/docs-cleanup.md（task-guide ではない）。重複していた task-guide.md を削除し、common-rules の節番号を連番にした（変更履歴の旧い番号は当時のまま）。PR を出す前のため、VERSION は v10 のままにした（規則の「VERSION を上げる」からの外れ。人間の指示による）。2回目の静的レビュー（20261024-all-static-2.md）の指摘（N-01〜N-06）も反映した。
 - v9：#24 に対応。版の記法を「v8-test3」のような試作の形から、数字だけの「v9」に改めた（読み違いを避けるため。CLAUDE.md の命令は増やさない）。
 - v8-test3（2026-10-22）：#20 に対応。静的レビュー・テスト作成・動的テストを別の新しいチャットで行うことは推奨とし、決めるのは人間にした。AI が「このチャットが作成に関わったか」を自分から確認すること（git log の確認）と、確認を取れないときに止まることをなくした（common-rules.md「別の新しいチャットで行う作業」・§1・§9、claude-md-block.md、prompts.md P0・P5・P7・P11、dynamic-test.md、setup.md）。テスト作成（P5）の「GitHub をつながない」は条件のまま。product-template の CLAUDE.md も同じ内容に差し替える。
