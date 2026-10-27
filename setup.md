@@ -38,6 +38,7 @@ GitHub や Claude の画面の名前は、変わることがあります。画�
 - 貼る前に、鍵・パスワード・個人情報（個人名、ホームディレクトリ名、ユーザー名を含む）を「●●」に置き換える。
 
 ## 4-2. dev-rules の版を上げたあと（人間が行う）
+- 既存プロジェクトは、版を上げる前に、文書の整理（prompts P13）で ARCHITECTURE の細部を docs/SPEC.md に移す。product-template には docs/SPEC.md の雛形を入れる（別のリポジトリ。人間が行う）。
 - VERSION が上がったら、各プロダクトの CLAUDE.md（product-template の写し）を、新しい claude-md-block.md の内容に差し替える。
 - 差し替えるまで、そのプロダクトの AI は「版が違う」として作業を始めず、人間に知らせる（README「版の運用」）。
 - PR のマージで版が上がるときは、マージと同じ日に差し替えを行う。
