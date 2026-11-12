@@ -6,9 +6,9 @@
 
 ## 手順
 
-1. 目標の版を確定する。dev-rules の main の VERSION を読む（`cat VERSION`。ローカルになければ `curl -sS https://raw.githubusercontent.com/Volyamp/dev-rules/main/VERSION`）。出た文字列（例：v13）を報告に書く。人間が版と枝を指定したときは、その指定を目標の版とし、報告に指定の内容を書く（main の版と違うことも併せて書く）。
+1. 目標の版を確定する。dev-rules の main の VERSION を読む（`cat VERSION`。ローカルになければ `curl -sS https://raw.githubusercontent.com/Volyamp/dev-rules/main/VERSION`）。出た文字列（例：v13）を報告に書く。
 
-2. 正本を取る。目標の版と同じ VERSION を持つ commit の claude-md-block.md を使う（通常は main）。人間が枝を指定したときは、その枝の claude-md-block.md を使い、報告に枝の名前を書く。
+2. 正本を取る。目標の版と同じ VERSION を持つ commit の claude-md-block.md を使う（通常は main）。人間が特定の枝を指定したときだけ、その枝を使い、報告に枝の名前を書く。
    ```
    git -C <dev-rules> show <commit>:claude-md-block.md > /tmp/cmb.md
    ```
