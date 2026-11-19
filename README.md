@@ -4,7 +4,7 @@ AI と一緒にプロダクトを作るときの、共通のルールと手順�
 現在の版：VERSION ファイルを見よ。
 
 ## 読む順番（AI が作業するとき）
-1. 各プロダクトの CLAUDE.md：作業前の確認（版の確認）と、基本の決まりの要点。版が一致すれば、ここで足りる。
+1. 各プロダクトの CLAUDE.md：作業前の確認（版の確認）と、基本の決まりの要点。版が一致しても、次の2を読む。
 2. 全作業：common-rules.md（枝の名前、別チャットの条件、止まるところ、安全）。
 3. 作業に応じて：rules/ の各ファイル、dynamic-test.md、adr-template.md。どれを読むかは claude-md-block.md の「読む先の表」にある。
 
@@ -31,17 +31,22 @@ AI と一緒にプロダクトを作るときの、共通のルールと手順�
 | ADR の書き方 | adr-template.md |
 | チャットに貼る依頼文（テスト作成の【前提】を含む） | prompts.md |
 | 準備と設定（人間の作業） | setup.md |
+| プロダクトの CLAUDE.md を版に合わせる | rules/sync-product.md |
 | 用語と呼び方 | common-rules.md §0 |
 
 節番号について：common-rules.md は §1 から連番にした。rules/*.md の § 番号は、依頼文や他の文書から参照されているため変えず、ファイルごとに欠番がある（例：review.md は §7 から）。
 
 ## 版の運用
-- 版の正本は VERSION（1行）。ルールを直したら、VERSION を上げ、下の変更履歴に1行書く。各文書に「版：」の行は置かない（重複させると直し忘れるため）。ただし claude-md-block.md の「v12」は、各 CLAUDE.md と照合するための例外で、版を上げるときに同じ変更で書き換える。
+- 版の正本は VERSION（1行）。ルールを直したら、下の変更履歴に1行書く。VERSION を上げるのは、claude-md-block.md を変えて各プロダクトの CLAUDE.md を直す必要があるときだけ。版が上がると、その時点で版が古いプロダクトは作業を始めず人間に知らせるため、写しを変えないルールの変更で上げてはいけない。各文書に「版：」の行は置かない（重複させると直し忘れるため）。ただし claude-md-block.md の「v15」は、各 CLAUDE.md と照合するための例外で、版を上げるときに同じ変更で書き換える。
 - 同じ変更で、claude-md-block.md と product-template の CLAUDE.md（その写し）をそろえる。片方だけ直さない。
+- この repo（dev-rules）自身には CLAUDE.md がない。dev-rules 自身を対象にする作業では、作業前の確認の代わりに VERSION を読み、読んだ文字列を報告に書く。
 - 各プロダクトの CLAUDE.md の「準拠する dev-rules の版」は、VERSION と同じ値にする。違うとき、AI は作業を始めず人間に知らせる（勝手に合わせない）。古い版のプロダクトは、人間が雛形の CLAUDE.md に差し替える。
 - 依頼文（prompts.md）は、どのプロダクトでも「CLAUDE.md の作業前の確認に従う」の一文で始める。
 
 ## 変更履歴
+- v15（2026-11-19）：VERSION を上げる基準を、claude-md-block.md（各プロダクトの CLAUDE.md の写し）を変えるときだけに改めた（README「版の運用」、impl.md §5、claude-md-block.md の基本の決まり。写しを変えないのに上げると、版の不一致で作業が止まるだけになるため）。この基準で、claude-md-block.md の基本の決まりを1行直したため、v15 とした。L-2〜L-9 も、版を上げずに対応した（ADR の状態の表記、README の正本表、動的テストの新規テストの扱い、「版」の語、伏せ方の参照、setup の守りの説明、P7 修正版のコミットメッセージ、dev-rules 自身の CLAUDE.md の扱い）。
+- v15 追記（2026-11-19）：静的レビュー（2回目、20261119-all-static-2.md）の N-1 に対応。P7 の依頼文3つに、dev-rules 自身を対象にするときは VERSION を読む旨を足した（prompts.md）。claude-md-block.md の写しは変えていないため、版は上げていない。
+- v14（2026-11-19）：静的レビュー（20261119-all-static.md）の M-1・M-2 に対応。sync-product の手順に、組み直す前の見出しの確認と、製品固有の節の比較を追加（M-1）。版が一致したとき common-rules.md を毎回読むと統一した（claude-md-block.md「作業前の確認」2、README の読む順番。M-2）。README の例外の版の表記（「v12」）を直した（L-1）。プロダクトの CLAUDE.md は、版の不一致を人間が sync-product で合わせる。M-3 として、動的テストの報告の保存先を対象の枝に統一した（common-rules §3 に合わせ、dynamic-test.md と prompts P8・P9）。M-4 として、P7 修正版に、規則を直したときの VERSION の確認を追加した。M-3・M-4 は CLAUDE.md の写しを変えないため、版は上げていない。
 - v13（2026-11-13）：push 後のフック判定（Stop フック）で誤警告が出ることへの対応。push した枝の追跡参照を作ってから確かめる手順を追加（common-rules.md §3、claude-md-block.md）。単一ブランチの clone では、この参照がないと push 済みのコミットが未 push と判定される。プロダクトの CLAUDE.md を版に合わせる手順を rules/sync-product.md に追加（人間が更新を指示したときだけ従う）。正本の版の表記の誤り（「v12」が残っていたこと）を直した。
 - v12（2026-10-28）：#30 に対応。版の確認で VERSION を WebFetch で読んでいたため、要約で「v11」を「v10」と読み違えることがあった。作業前の確認を、要約を通さない読み方（cat / curl）に変え、読んだ文字列をそのまま比べると決めた（claude-md-block.md「作業前の確認」）。
 - v11（2026-10-27）：#27・#28 に対応。仕様を、要件（依頼者の指示）、骨格（承認制）、大きな決定（ADR）、細部（docs/SPEC.md、案）に分けた。ARCHITECTURE は 1（要件）・3（骨格）・4（進捗）だけにし、細部は SPEC.md に移す。骨格を変えるときは承認を取り、ADR に残す。テストの根拠に SPEC.md を加え、SPEC を変えたらテストも同じコミットで直す。README の「ARCHITECTUREとの差分」は「要件・骨格との差分」に改めた。spec-template.md を追加。
