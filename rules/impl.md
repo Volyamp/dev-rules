@@ -3,7 +3,7 @@
 ## 5. 作業ルール
 - すべての変更（設計書、ADR、README、レビュー、テスト、コード）は、main に直接書き込まない。用途を表す接頭辞（design/、impl/、docs/、test/、fix/、adr/）で始まるブランチで行い、コミットして push する（PR は原則作らない。common-rules §3）。
 - コミットして push するところまでが AI の仕事。PR は、依頼者が依頼したときだけ AI が作る。マージは人間が行い、AI はマージしない。
-- 規則や手順を変えるときは、VERSION を上げ、README の変更履歴に1行書く。同じ内容を書いているすべての文書（common-rules、rules/、prompts.md、setup.md、README.md、dynamic-test.md、VERSION、claude-md-block.md、product-template の CLAUDE.md）を検索し、食い違いを残さない。残す場合は、理由をコミットメッセージに書き、人間の確認を取る。
+- 規則や手順を変えるときは、README の変更履歴に1行書く。VERSION は、claude-md-block.md を変えてプロダクトの CLAUDE.md を直す必要があるときだけ上げる（README「版の運用」）。同じ内容を書いているすべての文書（common-rules、rules/、prompts.md、setup.md、README.md、dynamic-test.md、VERSION、claude-md-block.md、product-template の CLAUDE.md）を検索し、食い違いを残さない。残す場合は、理由をコミットメッセージに書き、人間の確認を取る。
 - 依頼された範囲を狭めるとき（一部だけで作業を終えるとき）は、先に人間に確認する。AI の判断で範囲を分けない。
 - 人間が実行したり使ったりするファイル（スクリプト、設定、手順書など）は、作成した時点で、添付（SendUserFile 等）か、人間が取り込める枝（リポジトリ）で届ける。作業用フォルダ（scratchpad や一時フォルダ）のパスだけを伝えない。人間の環境からは開けないため。
 - 次の新しいチャットには、main ではなく、対象の枝の名前を渡す。GitHub をつながないチャット（テスト作成）は、貼る資料で渡す。
