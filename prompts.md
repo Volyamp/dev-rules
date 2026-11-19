@@ -184,6 +184,7 @@ rules/test.md「テストの取り込み」に従ってください。
 最初の全体レビュー：
 ```
 最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
+dev-rules 自身を対象にするときは、CLAUDE.md がないため、README の「この repo（dev-rules）自身には CLAUDE.md がない」に従い、VERSION を読んで報告に書く。
 
 rules/review.md §7 と、rules/review.md「静的レビュー（最初の全体レビュー）」に従って、このプロダクトをレビューしてください。
 結果は docs/reviews/YYYYMMDD-all-static.md として、対象の枝（《ブランチ名》）に入れてください。
@@ -193,6 +194,7 @@ rules/review.md §7 と、rules/review.md「静的レビュー（最初の全体
 変更分のレビュー：
 ```
 最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
+dev-rules 自身を対象にするときは、CLAUDE.md がないため、README の「この repo（dev-rules）自身には CLAUDE.md がない」に従い、VERSION を読んで報告に書く。
 
 rules/review.md §7 と、rules/review.md「静的レビュー（変更分）」に従って、《ブランチ名》 をレビューしてください。
 結果は docs/reviews/YYYYMMDD-《対象》-static.md（rules/review.md §7 の名前の決め方）として、対象の枝（《ブランチ名》）に入れてください。
@@ -202,6 +204,7 @@ rules/review.md §7 と、rules/review.md「静的レビュー（変更分）」
 レビューと修正を1回で行う（指摘が少ないと見込まれる小さな変更向け。独立性は問わない。同じチャットでよい）：
 ```
 最初に、CLAUDE.md を読み、その「作業前の確認」に従ってください。読めない場合は、作業を始めずに、そう教えてください。
+dev-rules 自身を対象にするときは、CLAUDE.md がないため、README の「この repo（dev-rules）自身には CLAUDE.md がない」に従い、VERSION を読んで報告に書く。
 
 《全体 または ブランチ名》 を、rules/review.md §7 の7観点でレビューし、見つかった指摘を修正してください。レビューと修正は、この1回の依頼で最後まで行ってください。この依頼は、rules/review.md §7 の「読むだけ」の定めより優先する（common-rules §1）。
 - 手順：(1) 報告書を作る（rules/review.md §7 の形式。docs/reviews/YYYYMMDD-《対象》-static.md）。(2) 指摘を1件ずつ直す。(3) 報告書の「対応状況」を、直した版と SHA を書いて更新する。
