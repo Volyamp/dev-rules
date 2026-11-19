@@ -42,7 +42,7 @@ AI と一緒にプロダクトを作るときの、共通のルールと手順�
 - 依頼文（prompts.md）は、どのプロダクトでも「CLAUDE.md の作業前の確認に従う」の一文で始める。
 
 ## 変更履歴
-- v14（2026-11-19）：静的レビュー（20261119-all-static.md）の M-1・M-2 に対応。sync-product の手順に、組み直す前の見出しの確認と、製品固有の節の比較を追加（M-1）。版が一致したとき common-rules.md を毎回読むと統一した（claude-md-block.md「作業前の確認」2、README の読む順番。M-2）。README の例外の版の表記（「v12」）を直した（L-1）。プロダクトの CLAUDE.md は、版の不一致を人間が sync-product で合わせる。
+- v14（2026-11-19）：静的レビュー（20261119-all-static.md）の M-1・M-2 に対応。sync-product の手順に、組み直す前の見出しの確認と、製品固有の節の比較を追加（M-1）。版が一致したとき common-rules.md を毎回読むと統一した（claude-md-block.md「作業前の確認」2、README の読む順番。M-2）。README の例外の版の表記（「v12」）を直した（L-1）。プロダクトの CLAUDE.md は、版の不一致を人間が sync-product で合わせる。M-3 として、動的テストの報告の保存先を対象の枝に統一した（common-rules §3 に合わせ、dynamic-test.md と prompts P8・P9）。M-4 として、P7 修正版に、規則を直したときの VERSION の確認を追加した。M-3・M-4 は CLAUDE.md の写しを変えないため、版は上げていない。
 - v13（2026-11-13）：push 後のフック判定（Stop フック）で誤警告が出ることへの対応。push した枝の追跡参照を作ってから確かめる手順を追加（common-rules.md §3、claude-md-block.md）。単一ブランチの clone では、この参照がないと push 済みのコミットが未 push と判定される。プロダクトの CLAUDE.md を版に合わせる手順を rules/sync-product.md に追加（人間が更新を指示したときだけ従う）。正本の版の表記の誤り（「v12」が残っていたこと）を直した。
 - v12（2026-10-28）：#30 に対応。版の確認で VERSION を WebFetch で読んでいたため、要約で「v11」を「v10」と読み違えることがあった。作業前の確認を、要約を通さない読み方（cat / curl）に変え、読んだ文字列をそのまま比べると決めた（claude-md-block.md「作業前の確認」）。
 - v11（2026-10-27）：#27・#28 に対応。仕様を、要件（依頼者の指示）、骨格（承認制）、大きな決定（ADR）、細部（docs/SPEC.md、案）に分けた。ARCHITECTURE は 1（要件）・3（骨格）・4（進捗）だけにし、細部は SPEC.md に移す。骨格を変えるときは承認を取り、ADR に残す。テストの根拠に SPEC.md を加え、SPEC を変えたらテストも同じコミットで直す。README の「ARCHITECTUREとの差分」は「要件・骨格との差分」に改めた。spec-template.md を追加。

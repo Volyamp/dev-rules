@@ -16,7 +16,7 @@
 - 失敗したものは、次のどれかに切り分ける（rules/test.md「テストが失敗したとき」）。
   ① 実装のバグ ／ ② 名前の不一致（adapter）／ ③ 期待値の誤り ／ ④ 仕様の誤り・不足 ／ 判断不能
 - 切り分けた後の修正は、この作業ではしない。結果に「次にやること」として書く（①②は P10、③は P5、④は P2）。
-- 結果の保存：docs/reviews/YYYYMMDD-《対象名》-dynamic.md（テストの枝に入れて push する。対象名の決め方は rules/review.md §7）。
+- 結果の保存：docs/reviews/YYYYMMDD-《対象名》-dynamic.md（対象の枝に入れて push する。対象名の決め方は rules/review.md §7）。
 - シナリオの番号は、飛ばした項目があっても詰めず、欠番のままにする。
 
 ---
@@ -50,7 +50,7 @@
 - 静的レビューの懸念点の検証結果
 - 失敗の切り分けと、次にやること
 - 新たに見つかった問題点
-- 上の内容を、docs/reviews/YYYYMMDD-《対象名》-dynamic.md として、テストの枝に入れて push する。
+- 上の内容を、docs/reviews/YYYYMMDD-《対象名》-dynamic.md として、対象の枝に入れて push する。
 
 ---
 
@@ -93,4 +93,4 @@ AI は、次の形式でまとめる。
 - 静的レビューの懸念点の検証結果
 - 失敗の切り分けと、次にやること
 - 新たに見つかった問題点
-- docs/reviews/YYYYMMDD-《対象名》-dynamic.md を、テストの枝に入れて push する。
+- docs/reviews/YYYYMMDD-《対象名》-dynamic.md を、対象の枝に入れて push する。
